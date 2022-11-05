@@ -1,6 +1,6 @@
 
 /** Js Files */
-import "./form";
+import  "./form";
 import "./submit";
 
 
@@ -10,15 +10,20 @@ import Bear from '../images/bear.png';
 import Dog from '../images/dog.png';
 
 /** CSS */
-import '../css/index.css'
+import "../css/index.css";
 
 /** Bootstrap*/
 import {Tooltip, Toast, Popover} from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-window.addEventListener('load', function () {
-    document.getElementById('logo').src = Logo;
-    document.getElementById('bearThumbnail').src = Bear;
-    document.getElementById('dogThumbnail').src = Dog;
-  });
+/** IndexDB */
+import { initdb } from './database';
+
+window.addEventListener('load', function() {
+  initdb();
+  document.getElementById('logo').src = Logo;
+  document.getElementById('bearThumbnail').src = Bear;
+  document.getElementById('dogThumbnail').src = Dog;
+});
+
