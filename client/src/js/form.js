@@ -4,10 +4,13 @@ const form = document.getElementById("formToggle");
 export const toggleForm = () => {
   if (form.style.display === "none") {
     form.style.display = "block";
+    console.log('sasa')
   } else {
     form.style.display = "none";
+    console.log('vvdas')
   }
 }
+
 let submitBtnToUpdate = false;
 let profileId;
 
@@ -25,7 +28,7 @@ export const clearForm = () => {
 
 form.addEventListener('submit', event => {
   // Handle data
-  event.preventDefault();
+event.preventDefault();
 let name = document.getElementById("name").value;
 let phone = document.getElementById("phone").value;
 let email = document.getElementById("email").value;
