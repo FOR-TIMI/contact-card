@@ -1,7 +1,7 @@
 
 /** Js Files */
-import  "./form";
-import "./submit";
+import  {clearForm, toggleForm} from "./form";
+
 
 
 /** Images */
@@ -18,12 +18,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 /** IndexDB */
-import { initdb } from './database';
+import { initdb, getDb, postDb } from './database';
+
+/** getAll cards */
+import { fetchCards} from './card';
+
+
 
 window.addEventListener('load', function() {
   initdb();
+  fetchCards();
   document.getElementById('logo').src = Logo;
   document.getElementById('bearThumbnail').src = Bear;
   document.getElementById('dogThumbnail').src = Dog;
 });
+
+
 
