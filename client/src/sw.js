@@ -10,7 +10,6 @@ precacheAndRoute(self.__WB_MANIFEST);
 
 const cacheName = 'static-resources';
 const matchCallback = ({ request }) => {
-  console.log(request);
   return (
     // CSS
     request.destination === 'style' ||

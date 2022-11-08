@@ -3,9 +3,6 @@
 import  {clearForm, toggleForm } from "./form";
 
 
-
-
-
 /** Images */
 import Logo from '../images/logo.png';
 import Bear from '../images/bear.png';
@@ -98,6 +95,45 @@ window.editCard = (e) => {
   submitBtnToUpdate = true;
 }
 
+
+/** To install the application */
+
+// Install button
+const installBtn = document.getElementById('installBtn');
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+  installBtn.style.visibility = 'visible';
+
+  installBtn.addEventListener('click', () => {
+    event.prompt();
+    installBtn.setAttribute('disabled', true);
+    installBtn.textContent = 'INSTALLED';
+  });
+});
+
+window.addEventListener('appinstalled', (event) => {
+  console.log('👍', 'appinstalled', event);
+});
+
+
+const shareData = {
+  title: 'Contact cards',
+  text: 'Keep track of contacts with contact cards!',
+}
+
+/** To share the application */
+const shareBtn = document.getElementById('shareBtn');
+shareBtn.addEventListener('click', async()=>{
+
+  try {
+    shareData.url = window.location.href
+    await navigator.share(shareData);
+    console.log("Contact Card app shared successfully")
+  } catch (err) {
+    console.error(err)
+  }
+})
 
 
 

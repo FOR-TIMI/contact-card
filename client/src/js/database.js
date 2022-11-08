@@ -34,7 +34,6 @@ export const getDb = async () => {
   // response
   const response  = await request;
 
-  console.log('res.value', response);
   return response;
 }
 
@@ -55,7 +54,7 @@ export const postDb = async(name,email,phone,profile) => {
    const request  = store.add({name,email,phone,profile});
 
    const response = await request
-   console.log('🚀🚀🚀 saved data to the database 🚀🚀🚀', response);
+   console.log('🚀🚀🚀 saved data to the database 🚀🚀🚀');
    return;
 }
 
@@ -72,8 +71,6 @@ export const deleteDb = async(id)=> {
   const request = store.delete(id);
 
   const response = await request;
-
-  console.log('response.value', response);
 
   return response?.value
 }
@@ -93,7 +90,7 @@ export const editDb = async(id, name, email, phone, profile) =>{
 
   const response = await request;
   
-  console.log('🚀 - data saved to the database', response);
+  console.log('🚀 - data saved to the database');
 }
 
 
