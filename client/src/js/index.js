@@ -6,7 +6,6 @@ import  {clearForm, toggleForm } from "./form";
 
 
 
-
 /** Images */
 import Logo from '../images/logo.png';
 import Bear from '../images/bear.png';
@@ -100,9 +99,17 @@ window.editCard = (e) => {
 }
 
 
+
+
 window.addEventListener('load', function() {
   initdb();
   fetchCards();
+
+  //To register service worker
+  this.navigator
+  .serviceWorker
+  .register('./service-worker.js');
+
   document.getElementById('logo').src = Logo;
   document.getElementById('bearThumbnail').src = Bear;
   document.getElementById('dogThumbnail').src = Dog;
